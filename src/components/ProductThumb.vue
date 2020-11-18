@@ -1,0 +1,222 @@
+<template>
+  <div class="product-section" cla>
+    <div class="category-menu ma-0 pa-0">
+      <v-row no-gutters>
+        <v-col class="pa-3">
+          <v-chip-group mandatory fixed active-class="primary--text">
+            <v-chip
+              v-for="category in categoryList"
+              :key="category.id"
+              active-class="primary--text"
+            >
+              <a
+                :href="'#' + category.name"
+                class="text-capitalize font-weight-medium"
+              >
+                {{ category.name }}</a
+              >
+            </v-chip>
+          </v-chip-group>
+        </v-col>
+      </v-row>
+    </div>
+    <div
+      class="test mb-4"
+      :id="category.name"
+      v-for="category in categoryList"
+      :key="category.id"
+    >
+      <h3 class="mb-0 text-capitalize">
+        {{ category.name }}
+      </h3>
+      <v-row>
+        <v-col
+          cols="12"
+          md="4"
+          sm="6"
+          v-for="product in category.products"
+          :key="product.id"
+        >
+          <v-card class="pa-3">
+            <div class="d-flex justify-space-between ">
+              <span>
+                <p class="body-1 mb-0">{{ product.title }}</p>
+                <small>P {{ product.price }}</small>
+              </span>
+              <img
+                :src="'./banners/' + product.img"
+                alt="product.title"
+                width="80"
+              />
+            </div>
+          </v-card>
+        </v-col>
+      </v-row>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data: () => ({
+    categoryList: [
+      {
+        id: "1",
+        name: "pie",
+        products: [
+          {
+            id: 1,
+            title: "Pizza Mania",
+            img: "or-banner1.jpg",
+            price: "123.00"
+          },
+          {
+            id: 2,
+            title: "Test",
+            img: "or-banner2.jpg",
+            price: "123.00"
+          },
+          {
+            id: 3,
+            title: "Test",
+            img: "or-banner2.jpg",
+            price: "123.00"
+          },
+          {
+            id: 4,
+            title: "Test",
+            img: "or-banner2.jpg",
+            price: "123.00"
+          },
+          {
+            id: 5,
+            title: "Test",
+            img: "or-banner2.jpg",
+            price: "123.00"
+          }
+        ]
+      },
+      {
+        id: "2",
+        name: "drinks",
+        products: [
+          {
+            id: 1,
+            title: "Pizza Mania",
+            img: "or-banner1.jpg",
+            price: "123.00"
+          },
+          {
+            id: 2,
+            title: "Test",
+            img: "or-banner2.jpg",
+            price: "123.00"
+          },
+          {
+            id: 3,
+            title: "Test",
+            img: "or-banner2.jpg",
+            price: "123.00"
+          }
+        ]
+      },
+      {
+        id: "3",
+        name: "Pasta",
+        products: [
+          {
+            id: 1,
+            title: "Pizza Mania",
+            img: "or-banner1.jpg",
+            price: "123.00"
+          },
+          {
+            id: 2,
+            title: "Test",
+            img: "or-banner2.jpg",
+            price: "123.00"
+          },
+          {
+            id: 3,
+            title: "Test",
+            img: "or-banner2.jpg",
+            price: "123.00"
+          }
+        ]
+      },
+      {
+        id: "4",
+        name: "Wazup",
+        products: [
+          {
+            id: 1,
+            title: "Pizza Mania",
+            img: "or-banner1.jpg",
+            price: "123.00"
+          },
+          {
+            id: 2,
+            title: "Test",
+            img: "or-banner2.jpg",
+            price: "123.00"
+          },
+          {
+            id: 3,
+            title: "Test",
+            img: "or-banner2.jpg",
+            price: "123.00"
+          }
+        ]
+      },
+      {
+        id: "5",
+        name: "Others",
+        products: [
+          {
+            id: 1,
+            title: "Pizza Mania",
+            img: "or-banner1.jpg",
+            price: "123.00"
+          },
+          {
+            id: 2,
+            title: "Test",
+            img: "or-banner2.jpg",
+            price: "123.00"
+          },
+          {
+            id: 3,
+            title: "Test",
+            img: "or-banner2.jpg",
+            price: "123.00"
+          }
+        ]
+      }
+    ]
+  }),
+  computed: {},
+  methods: {
+    //   getCategoryName(resultsList) {
+    //   return _.head(resultsList).name;
+    // },
+  }
+};
+</script>
+styl
+
+<style lang="sass">
+.restaurant-info
+    position: relative
+
+.category-menu
+    position: sticky
+    top: 0
+    z-index: 6
+    background-color:#fff
+
+:target:before
+    content: ""
+    display: block
+    height: 72px
+    margin: -72px 0 0
+</style>
