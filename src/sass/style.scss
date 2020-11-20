@@ -1,0 +1,9 @@
+@use 'variable';
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: variable.$test-color;
+}

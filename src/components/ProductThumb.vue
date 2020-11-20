@@ -1,27 +1,27 @@
 <template>
   <div class="product-section" cla>
-    <div class="category-menu ma-0 pa-0">
+    <div class="category-menu pa-0">
       <v-row no-gutters>
         <v-col class="pa-3">
-          <v-chip-group mandatory fixed active-class="primary--text">
+          <v-chip-group mandatory active-class="warning--text" center-active>
             <v-chip
               v-for="category in categoryList"
               :key="category.id"
-              active-class="primary--text"
+              active-class="warning--text"
             >
               <a
                 :href="'#' + category.name"
-                class="text-capitalize font-weight-medium"
+                class="text-capitalize font-weight-medium category-links"
               >
-                {{ category.name }}</a
-              >
+                {{ category.name }}
+              </a>
             </v-chip>
           </v-chip-group>
         </v-col>
       </v-row>
     </div>
     <div
-      class="test mb-4"
+      class="test mb-4 mt-6"
       :id="category.name"
       v-for="category in categoryList"
       :key="category.id"
@@ -191,6 +191,79 @@ export default {
             price: "123.00"
           }
         ]
+      },
+
+      {
+        id: "6",
+        name: "test4",
+        products: [
+          {
+            id: 1,
+            title: "Pizza Mania",
+            img: "or-banner1.jpg",
+            price: "123.00"
+          },
+          {
+            id: 2,
+            title: "Test",
+            img: "or-banner2.jpg",
+            price: "123.00"
+          },
+          {
+            id: 3,
+            title: "Test",
+            img: "or-banner2.jpg",
+            price: "123.00"
+          }
+        ]
+      },
+      {
+        id: "7",
+        name: "test5",
+        products: [
+          {
+            id: 1,
+            title: "Pizza Mania",
+            img: "or-banner1.jpg",
+            price: "123.00"
+          },
+          {
+            id: 2,
+            title: "Test",
+            img: "or-banner2.jpg",
+            price: "123.00"
+          },
+          {
+            id: 3,
+            title: "Test",
+            img: "or-banner2.jpg",
+            price: "123.00"
+          }
+        ]
+      },
+      {
+        id: "8",
+        name: "test6",
+        products: [
+          {
+            id: 1,
+            title: "Pizza Mania",
+            img: "or-banner1.jpg",
+            price: "123.00"
+          },
+          {
+            id: 2,
+            title: "Test",
+            img: "or-banner2.jpg",
+            price: "123.00"
+          },
+          {
+            id: 3,
+            title: "Test",
+            img: "or-banner2.jpg",
+            price: "123.00"
+          }
+        ]
       }
     ]
   }),
@@ -204,19 +277,25 @@ export default {
 </script>
 styl
 
-<style lang="sass">
+<style lang="sass" scoped>
 .restaurant-info
     position: relative
 
 .category-menu
+    position: -webkit-sticky
     position: sticky
     top: 0
     z-index: 6
-    background-color:#fff
+    background-color: #fff
+    margin: -15px
+    border-bottom:1px solid #8c8c8c45
+.category-links
+    text-decoration: none
+    color: #383838
 
 :target:before
     content: ""
     display: block
-    height: 72px
-    margin: -72px 0 0
+    height: 82px
+    margin: -83px 0 0
 </style>
