@@ -1,6 +1,6 @@
 <template>
   <v-navigation-drawer
-    v-model="ShowDetails"
+    v-model="showDetails"
     absolute
     temporary
     right
@@ -8,7 +8,7 @@
     class=""
   >
     <!-- <order-details></order-details> -->
-    <cart></cart>
+    <cart v-on:hide-details="showDetails = !showDetails"></cart>
   </v-navigation-drawer>
 </template>
 
@@ -18,7 +18,7 @@ import Cart from "@/components/Cart.vue";
 export default {
   data: () => ({
     //
-    ShowDetails: true
+    showDetails: true
   }),
   components: {
     // OrderDetails

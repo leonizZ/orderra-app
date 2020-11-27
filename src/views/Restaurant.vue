@@ -1,6 +1,6 @@
 <template>
   <div class="restaurant-cont">
-    <v-row no-gutters class="">
+    <v-row no-gutters class="ma-3">
       <v-col cols="12" class="ma-0 pa-0">
         <search-filter></search-filter>
       </v-col>
@@ -87,7 +87,7 @@
           </v-row>
 
           <!-- tabs -->
-          <product-thumb></product-thumb>
+          <restaurant></restaurant>
         </div>
       </v-col>
       <!-- <v-col cols="4" class="cart-details">
@@ -99,11 +99,11 @@
 
 <script>
 import SearchFilter from "@/components/SearchFilter";
-import ProductThumb from "@/components/ProductThumb";
+import Restaurant from "@/components/Restaurant";
 export default {
   components: {
     SearchFilter,
-    ProductThumb
+    Restaurant
   }
 };
 </script>

@@ -4,20 +4,16 @@
       <v-col cols="12">
         <div class="d-flex justify-space-between">
           <h4>My Cart (2 items)</h4>
-          <v-btn small>
+          <v-btn small @click="hideDetails">
             <v-icon small>mdi-close</v-icon>
           </v-btn>
         </div>
         <div class="d-flex align-center justify-space-between mt-4">
-          <v-text-field
+          <v-select
+            v-model="location"
+            :items="states"
             label="Deliver to"
-            placeholder="Dumaguete City"
-          ></v-text-field>
-          <v-btn class="" text small>
-            <v-icon color="#a5a5a5">
-              mdi-dots-vertical
-            </v-icon>
-          </v-btn>
+          ></v-select>
         </div>
 
         <cart-items></cart-items>
@@ -31,7 +27,7 @@
               Total <span class="font-italic">(Incl. VAT)</span>
             </h3>
           </div>
-          <div class="">
+          <div class="text-right">
             <p class="body-1 mb-0">1,119.00</p>
             <p class="body-1 mb-0">29.00</p>
             <p class="body-1 mb-0">279.00</p>
@@ -54,8 +50,19 @@
 import CartItems from "@/components/CartItems.vue";
 
 export default {
+  data: () => ({
+    location: null,
+    delOption: null,
+    category: null,
+    states: ["Alabama", "Alaska", "American Samoa"]
+  }),
   components: {
     CartItems
+  },
+  methods: {
+    hideDetails() {
+      this.$emit("hide-details");
+    }
   }
 };
 </script>

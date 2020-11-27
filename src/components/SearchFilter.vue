@@ -47,46 +47,69 @@
       </v-row>
     </v-col>
     <v-col cols="6" class="ma-0 pa-0">
-      <div class="search-cont d-flex">
-        <v-text-field
-          placeholder="Search here.."
-          prepend-inner-icon="mdi-magnify"
-          solo
-          dense
-          flat
-          background-color="#fafafa"
-          clearable
-        ></v-text-field>
-        <v-btn color="primary " class=" mx-3">
-          <v-icon>
-            mdi-filter-variant
-          </v-icon>
-        </v-btn>
-        <v-btn color="warning" class=" white--text">
-          <v-icon dark>
-            mdi-cart-outline
-          </v-icon>
-        </v-btn>
-      </div>
+      <v-row no-gutters>
+        <v-col cols="9" class="">
+          <v-text-field
+            placeholder="Search here.."
+            prepend-inner-icon="mdi-magnify"
+            solo
+            dense
+            flat
+            background-color="#fafafa"
+            clearable
+          ></v-text-field>
+        </v-col>
+        <v-col cols="3">
+          <v-btn color="primary " class="filter-btn mx-3">
+            <v-icon>
+              mdi-filter-variant
+            </v-icon>
+          </v-btn>
+          <v-btn
+            text
+            color="grey"
+            class="cart-btn grey--text"
+            @click="viewCart"
+          >
+            <v-badge overlap content="3" color="orange">
+              <v-icon dark>
+                mdi-cart-outline
+              </v-icon>
+            </v-badge>
+          </v-btn>
+        </v-col>
+      </v-row>
     </v-col>
   </v-row>
 </template>
 
 <script>
 export default {
+  props: {
+    isVisible: {
+      type: Boolean,
+      default: false
+    }
+  },
   data: () => ({
     location: null,
     delOption: null,
     category: null,
+    cart: [],
+
     states: ["Alabama", "Alaska", "American Samoa"]
-  })
+  }),
+  methods: {
+    viewCart() {
+      this.$emit("toggle-cart");
+      console.log("toggle");
+    }
+  }
 };
 </script>
 
 <style lang="sass">
-// .search-filter
-//     position: fixed
-//     top: 0
-//     z-index: 66
-//     background-color:#fff
+
+.filter-btn, .cart-btn
+    min-width: 45px !important
 </style>

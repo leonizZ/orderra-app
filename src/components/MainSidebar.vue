@@ -25,6 +25,23 @@
     </v-list>
 
     <template v-slot:append>
+      <div class="d-flex ma-4 flex-column">
+        <v-btn small block color="primary" @click="goTo('/login')">
+          Login
+        </v-btn>
+
+        <v-btn
+          small
+          block
+          outlined
+          color="warning"
+          @click="goTo('/register')"
+          class="mt-3"
+        >
+          Register
+        </v-btn>
+      </div>
+
       <div class="d-flex align-center ma-4">
         <v-avatar color="indigo">
           <v-icon dark>
@@ -47,22 +64,22 @@ export default {
     group: null,
     items: [
       {
-        icon: "mdi-inbox",
+        icon: "mdi-home",
         text: "Home",
         link: ""
       },
       {
-        icon: "mdi-bookmark",
+        icon: "mdi-heart",
         text: "Favorite",
         link: "favorites"
       },
       {
         icon: "mdi-send",
-        text: "Order",
+        text: "Orders",
         link: "order"
       },
       {
-        icon: "mdi-filter",
+        icon: "mdi-settings",
         text: "Settings",
         link: "settings"
       }

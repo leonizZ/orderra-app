@@ -2,13 +2,9 @@
   <div class="product-section" cla>
     <div class="category-menu pa-0">
       <v-row no-gutters>
-        <v-col class="pa-3">
-          <v-chip-group mandatory active-class="warning--text" center-active>
-            <v-chip
-              v-for="category in categoryList"
-              :key="category.id"
-              active-class="warning--text"
-            >
+        <v-col class="pa-3" cols="">
+          <v-chip-group active-class="warning--text" center-active>
+            <v-chip v-for="category in categoryList" :key="category.id">
               <a
                 :href="'#' + category.name"
                 class="text-capitalize font-weight-medium category-links"
@@ -36,8 +32,9 @@
           sm="6"
           v-for="product in category.products"
           :key="product.id"
+          @click="addToCart(product)"
         >
-          <v-card class="pa-3">
+          <v-card class="pa-3 product-tem added">
             <div class="d-flex justify-space-between ">
               <span>
                 <p class="body-1 mb-0">{{ product.title }}</p>
@@ -59,6 +56,9 @@
 <script>
 export default {
   data: () => ({
+    currentCategory: null,
+    isIntersecting: false,
+    activeCategory: null,
     categoryList: [
       {
         id: "1",
@@ -269,10 +269,11 @@ export default {
   }),
   computed: {},
   methods: {
-    //   getCategoryName(resultsList) {
-    //   return _.head(resultsList).name;
-    // },
-  }
+    addToCart(product) {
+      this.$emit("add-to-cart", product);
+    }
+  },
+  mounted() {}
 };
 </script>
 styl
@@ -292,6 +293,7 @@ styl
 .category-links
     text-decoration: none
     color: #383838
+
 
 :target:before
     content: ""

@@ -4,8 +4,10 @@ import Home from "../views/Home.vue";
 import Order from "../views/Order.vue";
 import Categories from "../views/Categories.vue";
 import Restaurant from "../views/Restaurant";
+import Shop from "../views/Shop";
 // Account
 import Login from "../views/Login";
+import Register from "../views/Register";
 // Test
 import Test from "../views/Test";
 
@@ -28,6 +30,11 @@ const routes = [
     component: Login
   },
   {
+    path: "/register",
+    name: "register",
+    component: Register
+  },
+  {
     path: "/test",
     name: "test",
     component: Test
@@ -36,6 +43,11 @@ const routes = [
     path: "/restaurant",
     name: "restaurant",
     component: Restaurant
+  },
+  {
+    path: "/shop",
+    name: "shop",
+    component: Shop
   },
   {
     path: "/categories",

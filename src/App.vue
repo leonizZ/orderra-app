@@ -2,7 +2,7 @@
   <!-- App.vue -->
 
   <v-app>
-    <navigation-drawer></navigation-drawer>
+    <main-sidebar></main-sidebar>
 
     <!-- Sizes your content based upon application components -->
     <v-main>
@@ -13,27 +13,28 @@
         <router-view></router-view>
       </v-fade-transition>
     </v-main>
-    <order-details></order-details>
+    <order-details v-if="sidedetails"> </order-details>
   </v-app>
 </template>
 
 <script>
 import OrderDetails from "@/sections/SideDetails";
-import NavigationDrawer from "@/components/NavigationDrawer.vue";
+import MainSidebar from "@/components/MainSidebar.vue";
 export default {
   name: "App",
+  data: () => ({
+    sidedetails: false
+  }),
   components: {
-    NavigationDrawer,
+    MainSidebar,
     OrderDetails
   },
-
-  data: () => ({
-    //
-  })
+  methods: {}
 };
 </script>
 
-<style lang="sass">
-html
-    scroll-behavior: smooth
+<style>
+html {
+  scroll-behavior: smooth;
+}
 </style>
