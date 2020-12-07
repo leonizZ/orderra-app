@@ -2,7 +2,7 @@
   <v-navigation-drawer app dense color="#F8F8F8" floating>
     <v-list-item>
       <v-list-item-content>
-        <v-img src="/orderra-logo.png" contain></v-img>
+        <v-img src="/orderra-logo.svg"></v-img>
       </v-list-item-content>
     </v-list-item>
 
@@ -25,6 +25,23 @@
     </v-list>
 
     <template v-slot:append>
+      <div class="d-flex ma-4 flex-column">
+        <v-btn small block color="primary" @click="goTo('/login')">
+          Login
+        </v-btn>
+
+        <v-btn
+          small
+          block
+          outlined
+          color="warning"
+          @click="goTo('/register')"
+          class="mt-3"
+        >
+          Register
+        </v-btn>
+      </div>
+
       <div class="d-flex align-center ma-4">
         <v-avatar color="indigo">
           <v-icon dark>
@@ -45,24 +62,25 @@
 export default {
   data: () => ({
     group: null,
+    dialog: false,
     items: [
       {
-        icon: "mdi-inbox",
+        icon: "mdi-home",
         text: "Home",
         link: ""
       },
       {
-        icon: "mdi-bookmark",
+        icon: "mdi-heart",
         text: "Favorite",
         link: "favorites"
       },
       {
         icon: "mdi-send",
-        text: "Order",
+        text: "Orders",
         link: "order"
       },
       {
-        icon: "mdi-filter",
+        icon: "mdi-settings",
         text: "Settings",
         link: "settings"
       }

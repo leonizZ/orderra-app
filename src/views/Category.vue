@@ -2,19 +2,19 @@
   <v-row class="ma-3">
     <v-col cols="12">
       <div class="my-3">
-        <h3 class="headline mb-3">Categories For You</h3>
+        <h3 class="headline mb-3">Sample</h3>
       </div>
 
-      <featured-categories></featured-categories>
+      <featured-shops></featured-shops>
     </v-col>
   </v-row>
 </template>
 
 <script>
-import FeaturedCategories from "@/components/FeaturedCategories";
+import FeaturedShops from "@/components/FeaturedShops";
 export default {
   components: {
-    FeaturedCategories
+    FeaturedShops
   }
 };
 </script>

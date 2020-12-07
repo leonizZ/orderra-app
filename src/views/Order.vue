@@ -2,7 +2,6 @@
   <div class="">
     <v-row class="ma-3">
       <v-col cols="12">
-        <search-filter></search-filter>
         <div class="my-3">
           <h3 class="headline mb-3">Upcoming Orders</h3>
 
@@ -14,11 +13,9 @@
 </template>
 
 <script>
-import SearchFilter from "@/components/SearchFilter.vue";
 import Orders from "@/components/Orders.vue";
 export default {
   components: {
-    SearchFilter,
     Orders
   }
 };

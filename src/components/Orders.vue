@@ -2,7 +2,7 @@
   <div class="">
     <v-row>
       <v-col cols="4">
-        <v-card color="#fafafa" flat class="pa-4">
+        <v-card flat class="pa-4">
           <div class="d-flex justify-space-between ">
             <span>
               <p class="mb-0 title">Burger King</p>
@@ -56,7 +56,7 @@
         </v-card>
       </v-col>
       <v-col cols="4">
-        <v-card color="#fafafa" flat class="pa-4">
+        <v-card flat class="pa-4">
           <div class="d-flex justify-space-between ">
             <span>
               <p class="mb-0 title">Burger King</p>

@@ -4,32 +4,43 @@
       cols="12"
       sm="6"
       md="4"
-      class="py-3"
+      class="py-3 "
       v-for="featured in featuredApps"
       :key="featured.id"
     >
-      <div class="d-flex align-center">
-        <v-avatar class="" size="75" tile>
+      <div class="d-flex align-center shop-cont">
+        <v-card flat class="pa-1">
+          <v-img
+            :src="'./shops/' + featured.img"
+            min-height="70"
+            height="70"
+            max-width="75"
+            contain
+            class="thumb-img "
+          ></v-img>
+        </v-card>
+
+        <!-- <v-avatar class="" size="75" tile>
           <v-img :src="'./shops/' + featured.img"></v-img>
-        </v-avatar>
+        </v-avatar> -->
         <div class="ml-3 flex-grow-1">
           <h6 class="body-1">{{ featured.name }}</h6>
 
           <div class="d-flex ">
             <span class="mr-2">
-              <v-icon color="orange" size="20">
+              <v-icon color="orange" size="17">
                 mdi-star
               </v-icon>
               <small class="ml-1">4.8(1234)</small>
             </span>
             <span class="mr-2">
-              <v-icon color="grey" size="20"
+              <v-icon color="grey" size="17"
                 >{{ featured.category.icon }}
               </v-icon>
               <small class="ml-1">{{ featured.category.name }}</small>
             </span>
             <span>
-              <v-icon color="grey" size="20">
+              <v-icon color="grey" size="17">
                 mdi-currency-usd
               </v-icon>
               <small class="ml-1">$$</small>
@@ -43,7 +54,7 @@
             </span>
 
             <span>
-              <v-icon color="grey" size="20">
+              <v-icon color="grey" size="17">
                 mdi-crosshairs
               </v-icon>
               <small class="ml-1">{{ featured.distance }}</small>
@@ -124,21 +135,14 @@ export default {
         },
         tag: "Free Delivery",
         distance: "12km"
-      },
-      {
-        id: 7,
-        img: "shop(1).jpg",
-        name: "Mercury Drug",
-        category: {
-          name: "food",
-          icon: "mdi-silverware"
-        },
-        tag: "Free Delivery",
-        distance: "12km"
       }
     ]
   })
 };
 </script>
 
-<style></style>
+<style>
+.thumb-img {
+  background: #fff;
+}
+</style>

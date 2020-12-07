@@ -1,11 +1,16 @@
 <template>
-  <v-row no-gutters class="search-filter ">
-    <v-col cols="6" class="ma-0 px-3">
-      <v-row no-gutters class="filter-cont">
-        <v-col cols="6" class="ma-0 pa-0">
+  <v-row no-gutters class="white-bg mx-4">
+    <v-col cols="2" class="ma-0 px-3">
+      <a href="/">
+        <v-img src="/orderra-logo.svg" class="logo-img"></v-img>
+      </a>
+    </v-col>
+    <v-col cols="10" class="ma-0 pa-0">
+      <v-row no-gutters>
+        <v-col cols="6" class="">
           <v-select
-            v-model="location"
-            :items="states"
+            v-model="address"
+            :items="addresses"
             menu-props="auto"
             label="Dumaguete City"
             solo
@@ -16,77 +21,57 @@
             single-line
           ></v-select>
         </v-col>
-        <v-col cols="3" class="ma-0 pa-0">
-          <v-select
-            v-model="delOption"
-            :items="states"
-            menu-props="auto"
-            label="Pick Up"
-            solo
-            flat
-            dense
-            hide-details
-            prepend-icon="mdi-shopping warning--text"
-            single-line
-          ></v-select>
-        </v-col>
-        <v-col cols="3" class="ma-0 pa-0">
-          <v-select
-            v-model="category"
-            :items="states"
-            menu-props="auto"
-            label="Best Deals"
-            solo
-            flat
-            dense
-            hide-details
-            prepend-icon="mdi-sale amber--text text--accent-3"
-            single-line
-          ></v-select>
+        <v-col cols="6">
+          <div class="d-flex justify-end">
+            <v-btn class="info " @click="goTo('/login')">
+              <v-icon> mdi-account-outline </v-icon>
+              Login
+            </v-btn>
+            <v-btn class="ml-3" @click="viewCart">
+              <v-icon size="18" left>
+                mdi-cart-outline
+              </v-icon>
+              Cart
+            </v-btn>
+          </div>
         </v-col>
       </v-row>
-    </v-col>
-    <v-col cols="6" class="ma-0 pa-0">
-      <div class="search-cont d-flex">
-        <v-text-field
-          placeholder="Search here.."
-          prepend-inner-icon="mdi-magnify"
-          solo
-          dense
-          flat
-          background-color="#fafafa"
-          clearable
-        ></v-text-field>
-        <v-btn color="primary " class=" mx-3">
-          <v-icon>
-            mdi-filter-variant
-          </v-icon>
-        </v-btn>
-        <v-btn color="warning" class=" white--text">
-          <v-icon dark>
-            mdi-cart-outline
-          </v-icon>
-        </v-btn>
-      </div>
     </v-col>
   </v-row>
 </template>
 
 <script>
 export default {
+  props: {
+    isVisible: {
+      type: Boolean,
+      default: false
+    }
+  },
+
   data: () => ({
     location: null,
-    delOption: null,
+    address: null,
+    orderType: null,
+    deals: null,
     category: null,
-    states: ["Alabama", "Alaska", "American Samoa"]
-  })
+    cart: [],
+
+    addresses: ["Dumaguete City", "Daro Highway", "Aldea Homes"],
+    orderTypeOptions: ["Pick up", "Delivery"],
+    ourDeals: ["Free Delivery", "Best Deals", "On Sale"]
+  }),
+  methods: {
+    viewCart() {
+      this.$emit("show-details");
+      console.log("toggle");
+    }
+  }
 };
 </script>
 
 <style lang="sass">
-// .search-filter
-//     position: fixed
-//     top: 0
-//     z-index: 66
-//     background-color:#fff
+
+.filter-btn, .cart-btn
+    min-width: 45px !important
 </style>
