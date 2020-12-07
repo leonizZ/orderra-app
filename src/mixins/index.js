@@ -18,7 +18,7 @@ export default {
     gameStatus() {
       return this.$store.state.gameStatus;
     },
-    sideColors() {
+    categories() {
       return this.$store.state.sideColors;
     },
     loading() {
@@ -26,15 +26,6 @@ export default {
     },
     user() {
       return this.$store.state.user;
-    },
-    game() {
-      return this.$store.getters.game;
-    },
-    translation() {
-      return this.$store.state.translation;
-    },
-    video() {
-      return this.$store.state.video;
     },
     appEvent() {
       return this.$store.state.appEvent;

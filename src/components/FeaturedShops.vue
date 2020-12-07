@@ -8,14 +8,17 @@
       v-for="featured in featuredApps"
       :key="featured.id"
     >
-      <div class="d-flex align-center">
-        <v-img
-          :src="'./shops/' + featured.img"
-          max-height="75"
-          max-width="75"
-          contain
-          class="white"
-        ></v-img>
+      <div class="d-flex align-center shop-cont">
+        <v-card flat class="pa-1">
+          <v-img
+            :src="'./shops/' + featured.img"
+            min-height="70"
+            height="70"
+            max-width="75"
+            contain
+            class="thumb-img "
+          ></v-img>
+        </v-card>
 
         <!-- <v-avatar class="" size="75" tile>
           <v-img :src="'./shops/' + featured.img"></v-img>
@@ -132,21 +135,14 @@ export default {
         },
         tag: "Free Delivery",
         distance: "12km"
-      },
-      {
-        id: 7,
-        img: "shop(1).jpg",
-        name: "Mercury Drug",
-        category: {
-          name: "food",
-          icon: "mdi-silverware"
-        },
-        tag: "Free Delivery",
-        distance: "12km"
       }
     ]
   })
 };
 </script>
 
-<style></style>
+<style>
+.thumb-img {
+  background: #fff;
+}
+</style>

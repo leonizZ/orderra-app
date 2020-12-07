@@ -2,7 +2,7 @@
   <v-navigation-drawer app dense color="#F8F8F8" floating>
     <v-list-item>
       <v-list-item-content>
-        <v-img src="/orderra-logo.png" contain></v-img>
+        <v-img src="/orderra-logo.svg"></v-img>
       </v-list-item-content>
     </v-list-item>
 
@@ -62,6 +62,7 @@
 export default {
   data: () => ({
     group: null,
+    dialog: false,
     items: [
       {
         icon: "mdi-home",

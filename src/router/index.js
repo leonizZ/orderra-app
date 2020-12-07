@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Order from "../views/Order.vue";
 import Categories from "../views/Categories.vue";
+import Category from "../views/Category.vue";
 import Restaurant from "../views/Restaurant";
 import Shop from "../views/Shop";
 // Account
@@ -53,6 +54,11 @@ const routes = [
     path: "/categories",
     name: "categories",
     component: Categories
+  },
+  {
+    path: "/category/:id",
+    name: "category",
+    component: Category
   }
 ];
 

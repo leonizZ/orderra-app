@@ -1,18 +1,10 @@
 <template>
-  <v-row class="categories-cont">
-    <v-col
-      cols="4"
-      xs="4"
-      sm="3"
-      md="2"
-      v-for="category in categories"
-      :key="category.id"
-    >
-      <v-hover v-slot="{ hover }">
+  <div class="test">
+    <v-slide-group mandatory show-arrows>
+      <v-slide-item v-for="category in categories" :key="category.id">
         <v-card
-          class="pa-4 text-center "
-          color="#FAFAFA"
-          :elevation="hover ? 6 : 0"
+          class="pa-4 mx-4 text-center category-cont"
+          @click="selectCategory(category.id)"
         >
           <v-avatar :color="CategoryColor(category.color)" class="rounded-xl">
             <v-icon dark>
@@ -23,9 +15,9 @@
           <p class="mb-0 body-1">{{ category.title }}</p>
           <p class="body-2 grey--text mb-0">{{ category.options }}</p>
         </v-card>
-      </v-hover>
-    </v-col>
-  </v-row>
+      </v-slide-item>
+    </v-slide-group>
+  </div>
 </template>
 
 <script>
@@ -33,9 +25,14 @@ export default {
   methods: {
     CategoryColor(color) {
       return color;
+    },
+
+    selectCategory(id) {
+      this.$router.push({ path: "/category/" + id });
     }
   },
   computed: {},
+
   data: () => ({
     categories: [
       {
@@ -79,6 +76,21 @@ export default {
         title: "Sample",
         color: "#FB8C00",
         options: "200+ options"
+      },
+      {
+        id: 7,
+        icon: "mdi-food",
+        title: "Sample",
+        color: "#FB8C00",
+        options: "200+ options"
+      },
+
+      {
+        id: 8,
+        icon: "mdi-food",
+        title: "Sample",
+        color: "#FB8C00",
+        options: "200+ options"
       }
     ]
   })
@@ -86,7 +98,7 @@ export default {
 </script>
 
 <style>
-.categories-cont .v-card {
-  cursor: pointer;
+.test {
+  border: 1px solid red;
 }
 </style>

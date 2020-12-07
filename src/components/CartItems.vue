@@ -1,8 +1,10 @@
 <template>
   <div class="cart-items">
     <div class="" v-for="cartItem in cartItems" :key="cartItem.name">
-      <h4 class="mb-4">Order From {{ cartItem.shopName }}</h4>
-      <v-row no-gutters v-for="item in cartItem.shopItems" :key="item.id">
+      <h4 class="my-4  title">
+        Order From <span class="warning--text">{{ cartItem.shopName }}</span>
+      </h4>
+      <v-row class="item-row" v-for="item in cartItem.shopItems" :key="item.id">
         <v-col cols="12" class="mb-2">
           <div class="d-flex align-center justify-space-between">
             <div class="product-info">
@@ -10,7 +12,7 @@
               <p class="body-2 mb-0">{{ item.description }}</p>
             </div>
             <div class="d-flex ">
-              <span class="product-price">{{ item.price }}</span>
+              <span class="product-price body-1">PHP {{ item.price }}</span>
               <v-btn x-small text class="ml-2" color="error">
                 <v-icon small>
                   mdi-delete

@@ -1,0 +1,19 @@
+{
+	"folders": [
+        {
+            "path": "../.."
+        },
+        {
+            "path": "../../../pcso-app"
+        },
+        {
+            "path": "../../../orderra"
+        },
+        {
+            "path": "../../../ufc-app"
+        }
+    ],
+    "settings": {
+        "git.ignoreLimitWarning": true
+    }
+}

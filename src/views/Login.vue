@@ -1,7 +1,12 @@
 <template>
-  <v-container>
-    <v-row no-gutters class="justify-center">
-      <v-col cols="12" sm="9" md="6">
+  <v-container class="pa-0">
+    <v-row class="justify-center"> </v-row>
+    <v-row no-gutters class="justify-center align-center login-cont white-bg">
+      <v-col cols="12" sm="9" md="6" class="">
+        <v-img
+          src="/orderra-logo.svg"
+          class="logo-img mb-4 text-center"
+        ></v-img>
         <h2>Welcome!</h2>
         <p>Sign in to your account to continue</p>
         <!-- login-form -->
